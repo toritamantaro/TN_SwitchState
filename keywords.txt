@@ -1,0 +1,29 @@
+
+#######################################
+# Syntax Coloring Map for TN_SwitchState
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+TN_Switch	KEYWORD1
+TnSwitchState	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+GiveSignal	KEYWORD2
+set_long_press_time	KEYWORD2
+long_press_time	KEYWORD2
+set_double_press_time	KEYWORD2
+double_press_time	KEYWORD2
+set_chatter_time	KEYWORD2
+chatter_time	KEYWORD2
+is_toggle	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
