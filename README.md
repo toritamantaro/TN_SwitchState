@@ -10,7 +10,7 @@ This Arduino library includes the following features.
 
 ## Usage
 
-As for pushbuttons circuit, please refer to the [link (arduino tutorial)](https://www.arduino.cc/en/tutorial/button).
+As for the push button circuit, please refer to the [link (arduino tutorial)](https://www.arduino.cc/en/tutorial/button).
 
 ```cpp
 #include <TN_SwitchState.h>

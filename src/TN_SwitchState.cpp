@@ -49,7 +49,7 @@ void TN_Switch::Init()
  * TnSwitchState TN_Switch::GiveSignal(boolean is_high)
  * 
  * Give a signal to proceed the state transition
- * boolesn is_high : high/low signal (high is true)
+ * boolean is_high : high/low signal (high is true)
  * 
  * return : enumerated type of switch state(TnSwitchState)
 **/
