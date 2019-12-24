@@ -67,4 +67,4 @@ void loop() {
 ```
 
 ## Class Diagram
-![TN_Switch_02](https://user-images.githubusercontent.com/37294949/71388287-0eb6ac00-263b-11ea-97e5-a603d8284211.png)
+![TN_Switch_02](https://user-images.githubusercontent.com/37294949/71388709-ca2c1000-263c-11ea-941f-f8a62561571f.png)
