@@ -146,6 +146,12 @@ TN_State *TN_Switch::ToggleOff() const
     return &state;
 }
 
+TN_State *TN_Switch::ToggleRise() const
+{
+    static ToggleRiseState state;
+    return &state;
+}
+
 TN_State *TN_Switch::ToggleRising() const
 {
     static ToggleRisingState state;
@@ -155,6 +161,12 @@ TN_State *TN_Switch::ToggleRising() const
 TN_State *TN_Switch::ToggleOn() const
 {
     static ToggleOnState state;
+    return &state;
+}
+
+TN_State *TN_Switch::ToggleFall() const
+{
+    static ToggleFallState state;
     return &state;
 }
 
@@ -341,8 +353,17 @@ void ToggleOffState::GiveSignal(boolean is_high, TN_Switch *ctx)
 {
     if (is_high)
     {
+        ctx->set_tn_state(ctx->ToggleRise()); /* state transition */
+    }
+}
+
+void ToggleRiseState::GiveSignal(boolean is_high, TN_Switch *ctx)
+{
+    if (is_high)
+    {
         ctx->set_tn_state(ctx->ToggleRising()); /* state transition */
     }
+
 }
 
 void ToggleRisingState::GiveSignal(boolean is_high, TN_Switch *ctx)
@@ -354,6 +375,14 @@ void ToggleRisingState::GiveSignal(boolean is_high, TN_Switch *ctx)
 }
 
 void ToggleOnState::GiveSignal(boolean is_high, TN_Switch *ctx)
+{
+    if (is_high)
+    {
+        ctx->set_tn_state(ctx->ToggleFall()); /* state transition */
+    }
+}
+
+void ToggleFallState::GiveSignal(boolean is_high, TN_Switch *ctx)
 {
     if (is_high)
     {

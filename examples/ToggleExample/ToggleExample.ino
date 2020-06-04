@@ -24,11 +24,13 @@ void loop() {
 
   /* Get switch state. */
   switch(btnA_state){
-    case TnSwitchState::kToggleOff:     Serial.print("\nToggle Off"); break;
-    case TnSwitchState::kToggleRising:  Serial.print("\nToggle Rising"); break;
-    case TnSwitchState::kToggleOn:      Serial.print("\nToggle ON"); break;
-    case TnSwitchState::kToggleFalling: Serial.print("\nToggle Falling"); break;
-    case TnSwitchState::kLowPassFiltering:   /* Serial.print("\nLow Pass Filtering"); */ break;
+    case TnSwitchState::kToggleOff:         Serial.print("\nToggle Off"); break;
+    case TnSwitchState::kToggleRise:        Serial.print("\nToggle Rise"); break;
+    case TnSwitchState::kToggleRising:      /* Serial.print("\nToggle Rising"); */  break;
+    case TnSwitchState::kToggleOn:          Serial.print("\nToggle ON"); break;
+    case TnSwitchState::kToggleFall:        Serial.print("\nToggle Fall"); break;
+    case TnSwitchState::kToggleFalling:     /* Serial.print("\nToggle Falling"); */  break;
+    case TnSwitchState::kLowPassFiltering:  /* Serial.print("\nLow Pass Filtering"); */ break;
     default: Serial.print("\nUNKNOWN"); break;
   }
 

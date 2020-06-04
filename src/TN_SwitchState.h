@@ -41,8 +41,10 @@ enum class TnSwitchState
     kLongHold,      /* Contiuous pressing after LongPress */
     kLongRelease,   /* Released after LongHold */
     kToggleOff,     /* Toggle Switch is OFF (only if 'is_toggle=true') */
+    kToggleRise,    /* Toggle Rise press (only if 'is_toggle=true') */
     kToggleRising,  /* Toggle Switch is Rising (only if 'is_toggle=true') */
     kToggleOn,      /* Toggle Switch is ON (only if 'is_toggle=true') */
+    kToggleFall,    /* Toggle Fall press (only if 'is_toggle=true') */
     kToggleFalling, /* Toggle Switch is Falling (only if 'is_toggle=true') */
     kLowPassFiltering /* Waiting to apply Low-pass filter */
 };
@@ -101,8 +103,10 @@ public:
     TN_State *LongHold() const;
     TN_State *LongRelease() const;
     TN_State *ToggleOff() const;
+    TN_State *ToggleRise() const;
     TN_State *ToggleRising() const;
     TN_State *ToggleOn() const;
+    TN_State *ToggleFall() const;
     TN_State *ToggleFalling() const;
 
 private:
@@ -276,6 +280,18 @@ protected:
     TnSwitchState GetStateEnum() override { return TnSwitchState::kToggleOff; }
 };
 
+/* Toggle Rise press (only if 'is_toggle=true') */
+class ToggleRiseState : public TN_State
+{
+public:
+    ToggleRiseState() = default;
+    ~ToggleRiseState() = default;
+
+protected:
+    void GiveSignal(boolean is_high, TN_Switch *ctx) override;
+    TnSwitchState GetStateEnum() override { return TnSwitchState::kToggleRise; }
+};
+
 /* Toggle Switch is Rising (only if 'is_toggle=true') */
 class ToggleRisingState : public TN_State
 {
@@ -298,6 +314,18 @@ public:
 protected:
     void GiveSignal(boolean is_high, TN_Switch *ctx) override;
     TnSwitchState GetStateEnum() override { return TnSwitchState::kToggleOn; }
+};
+
+/* Toggle Fall press (only if 'is_toggle=true') */
+class ToggleFallState : public TN_State
+{
+public:
+    ToggleFallState() = default;
+    ~ToggleFallState() = default;
+
+protected:
+    void GiveSignal(boolean is_high, TN_Switch *ctx) override;
+    TnSwitchState GetStateEnum() override { return TnSwitchState::kToggleFall; }
 };
 
 /* Toggle Switch is Falling (only if 'is_toggle=true') */

@@ -5,8 +5,9 @@
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 This Arduino library includes the following features.
-* Detect single press/release, double press/release and long press/release.
-* Detect toggle action ON/OFF/Rising/Falling.
+* Detect single press/hold/release, double press/hold/release and long press/hold/release.
+* Detect toggle action OFF/Rise/Rising/ON/Fall/Falling.
+
 
 ## Usage
 
