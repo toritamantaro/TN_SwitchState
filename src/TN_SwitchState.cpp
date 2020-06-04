@@ -363,6 +363,11 @@ void ToggleRiseState::GiveSignal(boolean is_high, TN_Switch *ctx)
     {
         ctx->set_tn_state(ctx->ToggleRising()); /* state transition */
     }
+    else
+    {
+        ctx->set_tn_state(ctx->ToggleOn()); /* state transition */
+    }
+    
 
 }
 
@@ -388,6 +393,11 @@ void ToggleFallState::GiveSignal(boolean is_high, TN_Switch *ctx)
     {
         ctx->set_tn_state(ctx->ToggleFalling()); /* state transition */
     }
+    else
+    {
+        ctx->set_tn_state(ctx->ToggleOff()); /* state transition */
+    }
+    
 }
 
 void ToggleFallingState::GiveSignal(boolean is_high, TN_Switch *ctx)
